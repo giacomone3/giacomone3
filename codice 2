@@ -1,0 +1,42 @@
+- #include <iostream>
+
+int main() {
+    double num1, num2, num3;
+    
+    // Input dei tre numeri
+    std::cout << "Inserisci il primo numero: ";
+    std::cin >> num1;
+    
+    std::cout << "Inserisci il secondo numero: ";
+    std::cin >> num2;
+
+    std::cout << "Inserisci il terzo numero: ";
+    std::cin >> num3;
+
+    // Inizializza le variabili per il minimo e il massimo
+    double minimo, massimo;
+
+    // Inizializza minimo e massimo con il primo numero
+    minimo = massimo = num1;
+
+    // Confronta il secondo numero con minimo e massimo
+    if (num2 < minimo) {
+        minimo = num2;
+    }
+    if (num2 > massimo) {
+        massimo = num2;
+    }
+
+    // Confronta il terzo numero con minimo e massimo
+    if (num3 < minimo) {
+        minimo = num3;
+    }
+    if (num3 > massimo) {
+        massimo = num3;
+    }
+
+    std::cout << "Il numero minore è: " << minimo << std::endl;
+    std::cout << "Il numero maggiore è: " << massimo << std::endl;
+
+    return 0;
+}
