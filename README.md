@@ -1,19 +1,23 @@
 #include <iostream>
-#include <cmath>
 
 int main() {
-    double numero;
+    int larghezza, altezza;
+    
+    // Input della larghezza e altezza dell'immagine
+    std::cout << "Inserisci la larghezza dell'immagine (in pixel): ";
+    std::cin >> larghezza;
+    
+    std::cout << "Inserisci l'altezza dell'immagine (in pixel): ";
+    std::cin >> altezza;
 
-    // Input del numero
-    std::cout << "Inserisci un numero: ";
-    std::cin >> numero;
+    // Calcola la dimensione in byte considerando 256 colori per pixel
+    int dimensioneInByte = larghezza * altezza;
 
-    // Verifica se il numero è non negativo prima di calcolare la radice quadrata
-    if (numero >= 0) {
-        double radiceQuadrata = std::sqrt(numero);
-        std::cout << "La radice quadrata di " << numero << " è: " << radiceQuadrata << std::endl;
+    // Verifica se l'immagine occupa più di 1 kbyte (1024 byte)
+    if (dimensioneInByte > 1024) {
+        std::cout << "L'immagine occupa più di 1 kilobyte." << std::endl;
     } else {
-        std::cout << "Errore: Impossibile calcolare la radice quadrata di un numero negativo." << std::endl;
+        std::cout << "L'immagine non occupa più di 1 kilobyte." << std::endl;
     }
 
     return 0;
