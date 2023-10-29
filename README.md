@@ -1,36 +1,23 @@
 #include <iostream>
 
 int main() {
-    double num1, num2;
-    
-    // Input dei due numeri
-    std::cout << "Inserisci il primo numero: ";
-    std::cin >> num1;
-    
-    std::cout << "Inserisci il secondo numero: ";
-    std::cin >> num2;
+    int nazionalita;
 
-    int scelta;
-    std::cout << "Scegli l'ordine di visualizzazione:\n";
-    std::cout << "1. Ordine crescente\n";
-    std::cout << "2. Ordine decrescente\n";
-    std::cout << "Inserisci la tua scelta (1 o 2): ";
-    std::cin >> scelta;
+    // Input della nazionalità
+    std::cout << "Inserisci il numero della tua nazionalità:\n";
+    std::cout << "0 = italiano, 1 = inglese, 2 = francese\n";
+    std::cout << "Scelta: ";
+    std::cin >> nazionalita;
 
-    if (scelta == 1) {
-        if (num1 < num2) {
-            std::cout << "Numeri in ordine crescente: " << num1 << ", " << num2 << std::endl;
-        } else {
-            std::cout << "Numeri in ordine crescente: " << num2 << ", " << num1 << std::endl;
-        }
-    } else if (scelta == 2) {
-        if (num1 > num2) {
-            std::cout << "Numeri in ordine decrescente: " << num1 << ", " << num2 << std::endl;
-        } else {
-            std::cout << "Numeri in ordine decrescente: " << num2 << ", " << num1 << std::endl;
-        }
+    // Comunica il saluto nella lingua corrispondente
+    if (nazionalita == 0) {
+        std::cout << "Ciao! Benvenuto!" << std::endl;
+    } else if (nazionalita == 1) {
+        std::cout << "Hello! Welcome!" << std::endl;
+    } else if (nazionalita == 2) {
+        std::cout << "Bonjour! Bienvenue!" << std::endl;
     } else {
-        std::cout << "Scelta non valida. Si prega di selezionare 1 o 2." << std::endl;
+        std::cout << "Nazionalità non riconosciuta. Per favore, inserisci 0, 1 o 2." << std::endl;
     }
 
     return 0;
