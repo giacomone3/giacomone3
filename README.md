@@ -1,28 +1,30 @@
 #include <iostream>
 
 int main() {
-    double saldoEuro;
-    
-    // Input del saldo del conto corrente in euro
-    std::cout << "Inserisci il saldo del conto corrente in euro: ";
-    std::cin >> saldoEuro;
+    double consumoElettrico;
+    double costoUnitario;
+    double canoneFisso;
 
-    // Tassi di cambio più recenti (da euro a yen e da euro a dollari)
-    double tassoCambioEuroToYen = 127.0;    // 1 euro = 127 yen (esempio)
-    double tassoCambioEuroToDollari = 1.15; // 1 euro = 1.15 dollari (esempio)
+    // Input del consumo elettrico in kilowatt-ora
+    std::cout << "Inserisci il consumo elettrico in kilowatt-ora: ";
+    std::cin >> consumoElettrico;
 
-    // Calcola il saldo in yen e dollari
-    double saldoYen = saldoEuro * tassoCambioEuroToYen;
-    double saldoDollari = saldoEuro * tassoCambioEuroToDollari;
+    // Input del costo unitario per kilowatt-ora
+    std::cout << "Inserisci il costo unitario per kilowatt-ora: ";
+    std::cin >> costoUnitario;
 
-    // Individua la relazione tra yen e dollari
-    double rapportoYenDollari = saldoYen / saldoDollari;
+    // Input dell'importo del canone fisso
+    std::cout << "Inserisci l'importo del canone fisso: ";
+    std::cin >> canoneFisso;
 
-    // Visualizza il saldo in yen e dollari, e il rapporto
-    std::cout << "Saldo in yen: " << saldoYen << " yen" << std::endl;
-    std::cout << "Saldo in dollari: " << saldoDollari << " dollari" << std::endl;
-    std::cout << "Rapporto tra yen e dollari: 1 euro = " << rapportoYenDollari << " yen" << std::endl;
+    // Calcola il costo totale della bolletta
+    double costoConsumo = consumoElettrico * costoUnitario;
+    double costoTotale = costoConsumo + canoneFisso;
+
+    // Visualizza il costo totale della bolletta
+    std::cout << "Il costo totale della bolletta è: " << costoTotale << " euro" << std::endl;
 
     return 0;
 }
+
 
