@@ -1,24 +1,21 @@
 #include <iostream>
+#include <cmath>
 
 int main() {
-    int nazionalita;
+    double numero;
 
-    // Input della nazionalità
-    std::cout << "Inserisci il numero della tua nazionalità:\n";
-    std::cout << "0 = italiano, 1 = inglese, 2 = francese\n";
-    std::cout << "Scelta: ";
-    std::cin >> nazionalita;
+    // Input del numero
+    std::cout << "Inserisci un numero: ";
+    std::cin >> numero;
 
-    // Comunica il saluto nella lingua corrispondente
-    if (nazionalita == 0) {
-        std::cout << "Ciao! Benvenuto!" << std::endl;
-    } else if (nazionalita == 1) {
-        std::cout << "Hello! Welcome!" << std::endl;
-    } else if (nazionalita == 2) {
-        std::cout << "Bonjour! Bienvenue!" << std::endl;
+    // Verifica se il numero è non negativo prima di calcolare la radice quadrata
+    if (numero >= 0) {
+        double radiceQuadrata = std::sqrt(numero);
+        std::cout << "La radice quadrata di " << numero << " è: " << radiceQuadrata << std::endl;
     } else {
-        std::cout << "Nazionalità non riconosciuta. Per favore, inserisci 0, 1 o 2." << std::endl;
+        std::cout << "Errore: Impossibile calcolare la radice quadrata di un numero negativo." << std::endl;
     }
 
     return 0;
 }
+
